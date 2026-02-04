@@ -1,0 +1,19 @@
+# RUSLAN Dataset Configuration
+
+train:
+  _target_: src.datasets.RuslanDataset
+  data_dir: "data/ruslan"
+  split: "train"
+  target_sr: 22050
+  segment_size: 8192
+  val_ratio: 0.05
+  limit: null
+
+val:
+  _target_: src.datasets.RuslanDataset
+  data_dir: "data/ruslan"
+  split: "val"
+  target_sr: 22050
+  segment_size: 8192
+  val_ratio: 0.05
+  limit: null

@@ -1,0 +1,5 @@
+# HiFi-GAN Loss Configuration
+
+_target_: src.loss.HiFiGANLoss
+lambda_fm: 2.0      # Feature matching loss weight
+lambda_mel: 45.0    # Mel-spectrogram loss weight

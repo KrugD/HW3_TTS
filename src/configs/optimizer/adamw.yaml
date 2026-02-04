@@ -1,0 +1,11 @@
+# AdamW Optimizer Configuration
+
+generator:
+  lr: 0.0002
+  betas: [0.8, 0.99]
+  weight_decay: 0.01
+
+discriminator:
+  lr: 0.0002
+  betas: [0.8, 0.99]
+  weight_decay: 0.01

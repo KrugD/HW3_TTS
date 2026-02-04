@@ -1,0 +1,33 @@
+# HiFi-GAN Training Configuration
+
+defaults:
+  - _self_
+  - datasets: ruslan
+  - dataloader: default
+  - model: hifigan_v1
+  - loss: hifigan
+  - optimizer: adamw
+  - scheduler: exponential
+  - writer: cometml
+  - mel: default
+
+# Training parameters
+trainer:
+  n_epochs: 100
+  log_interval: 100
+  save_interval: 10000
+  val_interval: 5000
+  log_audio_interval: 1000
+  grad_clip: null
+  save_dir: "checkpoints"
+  run_name: "hifigan_ruslan"
+  early_stopping_patience: 10  # Stop if no improvement for N epochs
+
+# Device
+device: "cuda"
+
+# Random seed for reproducibility
+seed: 42
+
+# Resume training from checkpoint
+resume_checkpoint: null

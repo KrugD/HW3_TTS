@@ -1,0 +1,11 @@
+# CometML Writer Configuration
+
+_target_: src.logger.CometMLWriter
+project_name: "hifigan-russian-tts"
+experiment_name: null  # Will be set from trainer.run_name
+api_key: null  # Set via COMET_API_KEY environment variable
+workspace: null
+log_audio: true
+log_spectrograms: true
+sample_rate: 22050
+disabled: false

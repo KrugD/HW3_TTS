@@ -1,0 +1,10 @@
+# Custom Directory Dataset Configuration
+
+inference:
+  _target_: src.datasets.CustomDirDataset
+  audio_dir: ${input_dir}
+  target_sr: 22050
+  resynthesize: ${resynthesize}
+  mel_dir: null
+  limit: null
+  audio_extension: "wav"

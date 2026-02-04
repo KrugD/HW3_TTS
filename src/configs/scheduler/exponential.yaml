@@ -1,0 +1,3 @@
+# Exponential Learning Rate Scheduler Configuration
+
+gamma: 0.999  # Learning rate decay factor per epoch

@@ -1,0 +1,23 @@
+# HiFi-GAN Synthesis Configuration
+
+defaults:
+  - _self_
+  - datasets: custom_dir
+  - model: hifigan_v1
+  - mel: default
+
+# Input/Output directories
+input_dir: "data/test/audio"
+output_dir: "output/synthesized"
+
+# Checkpoint path
+checkpoint: "checkpoints/generator_best.pt"
+
+# Synthesis mode
+resynthesize: true  # If true, extract mel from ground-truth audio
+
+# Device
+device: "cuda"
+
+# Batch size for synthesis
+batch_size: 1

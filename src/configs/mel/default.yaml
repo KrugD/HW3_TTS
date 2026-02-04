@@ -1,0 +1,16 @@
+# Mel-Spectrogram Configuration
+# These parameters match the HiFi-GAN paper settings
+
+sr: 22050           # Sample rate (RUSLAN resampled from 44100)
+n_fft: 1024         # FFT size
+win_length: 1024    # Window length
+hop_length: 256     # Hop length (product of upsample_rates)
+n_mels: 80          # Number of mel bands
+f_min: 0.0          # Minimum frequency
+f_max: 8000.0       # Maximum frequency
+power: 1.0          # Power for spectrogram
+center: true        # Pad signal on both sides
+pad_mode: "reflect" # Padding mode
+normalized: false   # Whether to normalize
+norm: null          # Mel filterbank normalization
+mel_scale: "htk"    # Mel scale
