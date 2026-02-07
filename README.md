@@ -144,6 +144,15 @@ python download_weights.py
 
 This downloads `generator_best.pt` (~55 MB) from Google Drive to `models_weights/`.
 
+### MOS Test Audio
+
+Three ground-truth audio files for MOS evaluation can be downloaded from
+[Google Drive](https://drive.google.com/drive/folders/1oClqdJjEGq6nDl9pAhqXivXGD5uJw1RJ):
+
+1. `1.wav`: "Ожидал увидеть тут толпы игроков, жаждущих меня убить, но никому моя голова почему-то не потребовалась."
+2. `2.wav`: "Уверяю вас, сэр, большую часть своей жизни я был глубоко убежден, что любой мир состоит из чего угодно, только не из добрых людей."
+3. `3.wav`: "Наш самый суровый священник был абсолютно никакой, в хлам, как распоследний питерский сантехник в канун дня праздника Парижской коммуны."
+
 ### Synthesize Audio
 
 #### Resynthesize Mode (extract mel from ground-truth audio)
@@ -165,6 +174,25 @@ python synthesize.py \
     checkpoint=models_weights/generator_best.pt \
     resynthesize=false
 ```
+
+### CustomDirDataset Format
+
+`CustomDirDataset` supports the following directory structure:
+
+```
+NameOfTheDirectoryWithUtterances/
+├── audio/
+│   ├── file1.wav
+│   ├── file2.wav
+│   └── ...
+└── transcriptions/       # optional, for Full TTS pipeline
+    ├── file1.txt
+    ├── file2.txt
+    └── ...
+```
+
+- In **resynthesis** mode: audio files from `audio/` are used to extract mel-spectrograms, which are then fed to the vocoder.
+- In **Full TTS** mode: transcriptions from `transcriptions/` can be used with an external acoustic model to generate mel-spectrograms, which are then vocoded.
 
 ## Model Architecture
 
